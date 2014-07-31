@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
 
 	def show
 		@group = Group.find(params[:id])
+		@posts = @group.posts
 	end
 
 	def new
@@ -20,7 +21,7 @@ class GroupsController < ApplicationController
 		@group = Group.new(group_params)
 
 		if @group.save
-			redirect_to groups_path, :notice => "New discussion has been published"
+			redirect_to groups_path, :notice => "New group has been published"
 		else
 			render :new
 		end
@@ -30,7 +31,7 @@ class GroupsController < ApplicationController
 		@group = Group.find(params[:id])
 
 		if @group.update(group_params)
-			redirect_to groups_path, :notice => "Discussion has been updated sucessfully"
+			redirect_to groups_path, :notice => "Group description has been updated sucessfully"
 		else
 			render :edit
 		end
@@ -40,7 +41,7 @@ class GroupsController < ApplicationController
 		@group = Group.find(params[:id])
 
 		@group.destroy
-		redirect_to groups_path, :alert => "Discussion has been removed sucessfully"
+		redirect_to groups_path, :alert => "Group has been removed sucessfully"
 	end
 
 	private
