@@ -3,10 +3,12 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
+gem 'rails_12factor', group: :production
+ruby "2.1.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
